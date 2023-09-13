@@ -25,6 +25,8 @@
                                         <td>
                                             <a href="{{ route('sessions.edit', $session->id) }}"
                                                 class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="{{ route('session.wise.student') }}" class="btn btn-info btn-sm">Sessiob wise
+                                                Student</a>
                                             <form action="{{ route('sessions.destroy', $session->id) }}" method="post">
                                                 {{-- @csrf --}}
                                                 {{ method_field('DELETE') }}

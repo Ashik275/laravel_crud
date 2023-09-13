@@ -18,6 +18,25 @@
                                     <input type="text" name="name" value="{{$student->name}}" class="form-control">
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-label">Department Name</label>
+                                    <select class="form-control" name="department_id"  id="department_id">
+                                        <option value="">Please Select a Department</option>
+                                        @foreach ($departments as $department)
+                                            <option {{($department->id==$student->department_id) ? "selected":''}} value="{{ $department->id }}">{{ $department->dept_name }}</option>
+                                        @endforeach
+
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Session</label>
+                                    <select class="form-control" name="session_id" id="session_id">
+                                        <option value="">Please Select a Session</option>
+                                        @foreach ($sessions as $session)
+                                            <option value="{{ $session->id }}" {{($session->id==$student->session_id) ? "selected":''}} >{{ $session->session_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">Email address</label>
                                     <input type="email" name="email" value="{{$student->email}}" class="form-control">
                                 </div>

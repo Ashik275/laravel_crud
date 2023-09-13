@@ -16,7 +16,7 @@
                                 <input type="hidden" value="{{$department->id}}" name="id">
                                 <div class="mb-3">
                                     <label class="form-label">Department Name</label>
-                                    <input type="text" name="dept_name" value="{{$department->dept_name}}" class="form-control">
+                                    <input type="text" name="dept_name" value="{{$department->dept_name}}"  class="form-control">
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Department Code</label>

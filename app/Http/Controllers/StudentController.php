@@ -30,6 +30,8 @@ class StudentController extends Controller
     }
     public function edit($id){
         return view('edit',[
+            'departments'=> Department::where('status',1)->get(),
+            'sessions'=> Session::all(),
             'student'=>Student::find($id)
         ]);
     }

@@ -21,23 +21,27 @@
                                 </tr>
                                 @foreach ($departments as $department)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>                   
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $department->dept_name }}</td>
                                         <td>{{ $department->dept_code }}</td>
                                         <td>{{ $department->status == 1 ? 'Active' : 'Deactive' }}</td>
                                         <td>
                                             <a href="{{ route('departments.edit', $department->id) }}"
                                                 class="btn btn-primary btn-sm">Edit</a>
+                                            <a href="{{ route('dept.wise.student', $department->id) }}"
+                                                class="btn btn-info btn-sm">Department wise Student</a>
+                                        
                                             @if ($department->status == 1)
                                                 <a href="{{ route('departments.show', $department->id) }}"
                                                     class="btn btn-warning btn-sm">Inactive</a>
                                             @else
-                                                <a href="{{route('departments.show', $department->id) }}"
+                                                <a href="{{ route('departments.show', $department->id) }}"
                                                     class="btn btn-success btn-sm">Active</a>
                                             @endif
 
 
-                                            <form action="{{ route('departments.destroy', $department->id) }}" method="post">
+                                            <form action="{{ route('departments.destroy', $department->id) }}"
+                                                method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <input type="hidden" value="{{ $department->id }}" name="id">

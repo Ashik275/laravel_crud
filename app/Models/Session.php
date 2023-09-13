@@ -20,4 +20,7 @@ class Session extends Model
         self::$session->session_name = $request->session_name;
         self::$session->save();
     }
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
 }

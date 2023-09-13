@@ -32,4 +32,7 @@ class Department extends Model
         }
         self::$department->save();
     }
+    public function students(){
+        return $this->hasMany(Student::class);
+    }
 }

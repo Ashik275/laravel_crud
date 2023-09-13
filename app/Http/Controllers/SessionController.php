@@ -12,8 +12,8 @@ class SessionController extends Controller
      */
     public function index()
     {
-        return view('session.index',[
-            'sessions'=>Session::all()
+        return view('session.index', [
+            'sessions' => Session::all()
         ]);
     }
 
@@ -23,7 +23,7 @@ class SessionController extends Controller
     public function create()
     {
         //
-         return view('session.create');
+        return view('session.create');
     }
 
     /**
@@ -50,8 +50,8 @@ class SessionController extends Controller
     public function edit(string $id)
     {
         //
-        return view('session.edit',[
-            'session'=>Session::find($id)
+        return view('session.edit', [
+            'session' => Session::find($id)
         ]);
     }
 
@@ -61,7 +61,7 @@ class SessionController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        Session::saveInfo($request,$id);
+        Session::saveInfo($request, $id);
         return redirect(route("sessions.index"));
     }
 
@@ -74,5 +74,11 @@ class SessionController extends Controller
         $session = Session::find($id);
         $session->delete();
         return redirect(route("sessions.index"));
+    }
+    public function sessionWiseStudent()
+    {
+        return view('session.session-wise-student',[
+            'sessions'=>Session::all()
+        ]);
     }
 }

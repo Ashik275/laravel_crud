@@ -76,4 +76,12 @@ class DepartmentController extends Controller
         $dept->delete();
         return redirect(route("departments.index"));
     }
+    public function deptWiseStudent($id)
+    {
+        return view('department.dept-wise-student',[
+            'departments'=>Department::find($id)
+        ]);
+      
+    }
+ 
 }

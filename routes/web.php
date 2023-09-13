@@ -28,6 +28,8 @@ Route::get('/edit/student/{id}',[StudentController::class,'edit'])->name('edit')
 Route::post('/update',[StudentController::class,'update'])->name('update');
 //Route::get('/delete/student/{id}',[StudentController::class,'deleteInfo'])->name('delete');
 Route::post('/delete/student',[StudentController::class,'deleteInfo'])->name('delete');
+Route::get('/dept/wise/student/{id}',[DepartmentController::class,'deptWiseStudent'])->name('dept.wise.student');
+Route::get('/session/wise/student',[SessionController::class,'sessionWiseStudent'])->name('session.wise.student');
 
 
 Route::resources(['departments'=>DepartmentController::class]);

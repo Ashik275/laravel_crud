@@ -39,10 +39,10 @@ class Student extends Model
                 }
                 self::$student->image = self::saveImage($request);
             }
-            self::$student->department_id      =$request->department_id;
-            self::$student->session_id      =$request->session_id;
-            self::$student->save();
         }
+        self::$student->department_id =$request->department_id;
+        self::$student->session_id  =$request->session_id;
+        self::$student->save();
     }
     public static function saveImage($request){
         self::$image = $request->file('image');
