@@ -54,6 +54,8 @@ class Student extends Model
     }
     public function department(){
         return $this->belongsTo(Department::class);
+        //IF the foriegn key name is not like the table name_id example: table_name=departments foriegn key=department_id
+        // return $this->belongsTo(Department::class,'dept_id');
     }
     public function session(){
         return $this->belongsTo(Session::class);
